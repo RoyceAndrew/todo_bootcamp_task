@@ -1,0 +1,250 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+:root {
+    --background: #efd2d6ff;
+    --highlight: #8e9aafff;
+    --border: 0px 0px 20px 10px #efd2d6ff
+}
+
+.finish {
+    text-decoration-line: line-through;
+}
+
+body {
+    background-image: url("./images/bg-todoo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+header img {
+    height: 36px;
+
+}
+
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 100%;
+    width: 100%;
+    gap: 30px;
+    padding: 20px;
+}
+
+#profile {
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    justify-content: start;
+    padding-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.bg {
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 0px 0px 20px 10px var(--background);
+    border-radius: 10px;
+}
+
+#tanggal {
+    grid-area: 2 / 1 / 3 / 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#tanggal {
+    font-size: x-large;
+}
+
+#profile img {
+    height: 70%;
+    object-fit: cover;
+    width: 90%;
+    border-radius: 10px;
+    object-position: top;
+}
+
+#profile h2 {
+    color: white;
+}
+
+#lists {
+    grid-area: 1 / 2 / 3 / 3;
+    padding: 40px;
+    padding-top: 10px !important;
+    padding-bottom: 150px;
+}
+
+.task {
+    font-size: 36px;
+}
+
+input, select, option {
+    color: black;
+}
+
+#done {
+    grid-area: 1 / 3 / 3 / 4;
+}
+
+#add-task {
+    grid-area: 3 / 1 / 4 / 5;
+}
+
+#done, #overdue {
+    
+    overflow-y: auto;
+    padding: 10px 20px;
+}
+
+#overdue {
+    grid-area: 1 / 4 / 3 / 5;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    gap: 10px;
+}
+
+.tugas {
+    grid-area: 1 / 1 / 2 / 2;
+    
+}
+
+input, select {
+    font-size: 20px;
+}
+
+.priority {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.deadline {
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.submit {
+    grid-area: 1 / 2 / 4 / 3;
+    background-color: var(--background);
+    font-size: xx-large;
+    border: none;
+    border-radius: 10px;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 0px 0px 20px 10px var(--background);
+    border-radius: 10px;
+}
+
+.tugas, .deadline, .priority {
+    display: flex;
+    flex-direction: column;
+    font-size: x-large;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    border: 5px solid var(--background);
+    padding: 10px;
+    padding-left: 15px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+#list {
+    overflow-y: auto;
+    height: 100%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.row p {
+    font-size: 25px;
+}
+
+.row p:nth-child(1) {
+    font-size: 35px;
+}
+
+input.check {
+    height: 30px;
+    width: 30px;
+    margin-right: 15px;
+    
+}
+
+#delete {
+    position: absolute;
+    width: 90%;
+    background-color: var(--background);
+    font-size: 24px;
+    border: none;
+    left: 5%;
+    right: 5%;
+    bottom: 20px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+}
+
+#delete:hover {
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 0px 0px 20px 10px var(--background);
+    border-radius: 10px;
+
+}
+
+@media (max-width: 768px) {
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    #done, #overdue {
+        min-height: 300px;
+    }
+
+    input {
+        max-width: 150px;
+    }
+
+    .row p {
+        font-size: 15px;
+    }
+    
+    .row p:nth-child(1) {
+        font-size: 20px;
+    }
+}

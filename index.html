@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="styles.css">
+    <title>ToDo</title>
+</head>
+<body>
+    
+    <main>
+    <section id="profile" class="bg">
+    <img src="./images/profilepct.jpg">
+    <h2>Yanto</h2>
+    <h2>Manager</h2>
+    </section>
+
+    <section id="tanggal" class="bg">
+        <h1>Tanggal:</h1>
+        <h1 id="date"></h1>
+        <h1>Jam:</h1>
+        <h1 id="jam"></h1>
+    </section>
+
+    <section id="add-task" class="bg">
+        <form onsubmit="handleSubmit(event)">
+            <label class="tugas">Tugas:<input type="text"  required name="item" placeholder="Benerin bug"/></label>
+            <label class="priority">Priority:<select name="priority">
+                <option value="HARD">HARD</option>
+                <option value="MEDIUM">MEDIUM</option>
+                <option value="LOW">LOW</option>
+            </select></label>
+            <label class="deadline">Deadline:<input type="date" required name="deadline"/></label>
+            <button class="submit" type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section id="lists" class="bg">
+        <h2>Job lists</h2>
+        <input type="date" name="todaytask">
+        <div id="list"></div>
+        <button id="delete">Delete All</button>
+        
+    </section>
+
+    <section id="done" class="bg">
+        <h2>Done</h2>
+        <div id="done-list"></div>
+    </section>
+
+    <section id="overdue" class="bg">
+        <h2>Overdue</h2>
+        <div id="over-list">
+            
+        </div>
+    </section>
+    
+    </main>
+    <script src="index.js" charset="UTF-8"></script>
+</body>
+</html>
